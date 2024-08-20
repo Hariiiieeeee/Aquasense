@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquasense</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="./js/script.js" defer></script>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h2 class="topic">AQUASENSE</h2>
+    </header>
+
+    <nav class="menu">
+        <div class="user">
+            <img class="user-profile" src="./images/profile.png" alt="User Profile">
+            <div class="user-details">
+                <b class="user-name">USERNAME</b>
+                <p class="user-phoneNumber">XXXXX XXXXX</p>
+            </div>
+        </div>
+        <ul style="list-style-type: none;">
+            <li><a href="./index.html" class="menu-dashboard">Dashboard</a></li>
+            <li><a href="./tips.html" class="menu-element1">Tips</a></li>
+            <li><a href="./alerts.html" class="menu-element2">Alerts</a></li>
+            <li><a href="./settings.html" class="menu-element3">Settings</a></li>
+            <li><a href="./contact.html" class="menu-element4">Contact us</a></li>
+            <li><a href="./logout.html" class="menu-logout">Log out</a></li>
+        </ul>
+    </nav>
+
+    <main class="dashboard">
+        <section class="water-level">
+            <h2 class="water-level-text">Water Level</h2>
+            <p class="water-level-used"><span id="water-level-number" class="water-level-number">00</span> used</p>
+        </section>
+
+        <section class="leakage">
+            <div class="leakage-details">
+                <h2 class="leakage-text">Leak Possibility</h2>
+                <p class="leakage-description">Less possibility of water leakage through pipes</p>
+            </div>
+            <button class="leakage-button" aria-label="Leakage Status: Low">Low</button>
+        </section>
+
+        <section class="weather">
+            <div class="error" role="alert">
+                <p>Invalid city name</p>
+            </div>
+            <div class="weather-display">
+                <img src="./images/rain.png" class="weather-icon" alt="Weather Icon">
+                <h1 class="weather-temp" id="weather-temp">00°C</h1>
+                <h2 class="weather-city" id="weather-city">CITY NAME</h2>
+            </div>
+        </section>
+
+        <section class="graph">
+            <canvas id="waterLevelChart" width="1050" height="400"></canvas>
+        </section>
+
+        <section class="progress-bar">
+            <div class="progress-bar-fill" id="progress-bar-fill"></div>
+            <b class="progress-bar-label"><span id="threshold-level-number" name="threshold-level-number">00</span> completed</b>
+            <div class="capacity-label" id="threshold-label"><span id="threshold-label-number">00</span>L</div>
+        </section>
+    </main>
+
+    <div id="toastBox" role="status" aria-live="polite"></div>
+</body>
+</html>

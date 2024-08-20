@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerts - Aquasense</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/script.js" defer></script>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h2 class="topic">AQUASENSE</h2>
+    </header>
+
+    <nav class="menu">
+        <div class="user">
+            <img class="user-profile" src="./images/profile.png" alt="User Profile">
+            <div class="user-details">
+                <b class="user-name">USERNAME</b>
+                <p class="user-phoneNumber">XXXXX XXXXX</p>
+            </div>
+        </div>
+        <ul style="list-style-type: none;">
+            <li><a href="./index.html" class="menu-dashboard">Dashboard</a></li>
+            <li><a href="./tips.html" class="menu-element1">Tips</a></li>
+            <li><a href="./alerts.html" class="menu-element2">Alerts</a></li>
+            <li><a href="./settings.html" class="menu-element3">Settings</a></li>
+            <li><a href="./contact.html" class="menu-element4">Contact us</a></li>
+            <li><a href="./logout.html" class="menu-logout">Log out</a></li>
+        </ul>
+    </nav>
+
+    <main class="alerts">
+        <section class="alerts-list">
+            <h2 class="alerts-title">Alerts</h2>
+            <div id="alert1" class="alert-item">
+                <h3 class="alert-heading" id="alertHeading1">High Water Level</h3>
+                <p class="alert-description">The water level has exceeded the threshold.</p>
+                <button class="alert-action" data-alert-id="1">Resolve</button>
+            </div>
+            <div id="alert2" class="alert-item">
+                <h3 class="alert-heading" id="alertHeading2">Leakage Detected</h3>
+                <p class="alert-description">Potential leakage detected in the pipeline.</p>
+                <button class="alert-action" data-alert-id="2">Resolve</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="toastBox" role="status" aria-live="polite"></div>
+</body>
+</html>

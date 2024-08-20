@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - Aquasense</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/logout.js" defer></script>
+</head>
+<body>
+    <header>
+        <h2 class="topic">AQUASENSE</h2>
+    </header>
+
+    <nav class="menu">
+        <div class="user">
+            <img class="user-profile" src="./images/profile.png" alt="User Profile">
+            <div class="user-details">
+                <b class="user-name">USERNAME</b>
+                <p class="user-phoneNumber">XXXXX XXXXX</p>
+            </div>
+        </div>
+        <ul style="list-style-type: none;">
+            <li><a href="./index.html" class="menu-dashboard">Dashboard</a></li>
+            <li><a href="./tips.html" class="menu-element1">Tips</a></li>
+            <li><a href="./alerts.html" class="menu-element2">Alerts</a></li>
+            <li><a href="./settings.html" class="menu-element3">Settings</a></li>
+            <li><a href="./contact.html" class="menu-element4">Contact us</a></li>
+            <li><a href="./logout.html" class="menu-logout">Log out</a></li>
+        </ul>
+    </nav>
+
+    <main class="logout-container">
+        <section class="logout-box">
+            <h2 class="logout-text">Are you sure you want to log out?</h2>
+            <button class="logout-confirm-button" id="logoutConfirmButton">Yes, Logout</button>
+            <button class="logout-cancel-button" id="logoutCancelButton">Cancel</button>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-text">&copy; 2024 Aquasense. All rights reserved.</p>
+    </footer>
+</body>
+</html>

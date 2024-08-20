@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Aquasense</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="./js/settings.js" defer></script>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h2 class="topic">AQUASENSE</h2>
+    </header>
+
+    <nav class="menu">
+        <div class="user">
+            <img class="user-profile" src="./images/profile.png" alt="User Profile">
+            <div class="user-details">
+                <b class="user-name">USERNAME</b>
+                <p class="user-phoneNumber">XXXXX XXXXX</p>
+            </div>
+        </div>
+        <ul style="list-style-type: none;">
+            <li><a href="./index.html" class="menu-dashboard">Dashboard</a></li>
+            <li><a href="./tips.html" class="menu-element1">Tips</a></li>
+            <li><a href="./alerts.html" class="menu-element2">Alerts</a></li>
+            <li><a href="./settings.html" class="menu-element3">Settings</a></li>
+            <li><a href="./contact.html" class="menu-element4">Contact us</a></li>
+            <li><a href="./logout.html" class="menu-logout">Log out</a></li>
+        </ul>
+    </nav>
+
+    <main class="settings">
+        <section class="settings-section">
+            <h2>User Profile</h2>
+            <form id="userProfileForm">
+                <label for="userName">Name:</label>
+                <input type="text" id="userName" name="userName">
+                
+                <label for="userEmail">Email:</label>
+                <input type="email" id="userEmail" name="userEmail">
+                
+                <label for="userPhone">Phone:</label>
+                <input type="tel" id="userPhone" name="userPhone">
+                
+                <button type="submit">Update Profile</button>
+            </form>
+        </section>
+
+        <section class="settings-section">
+            <h2>Personal</h2>
+            <form id="personalForm">
+                <label for="numAdults">Number of Adults:</label>
+                <input type="number" id="numAdults" name="numAdults" min="1" max="10">
+                
+                <label for="numChildren">Number of Children:</label>
+                <input type="number" id="numChildren" name="numChildren" min="0" max="10">
+                
+                <label for="userCity">City:</label>
+                <input type="text" id="userCity" name="userCity">
+                
+                <button type="submit">Save Information</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

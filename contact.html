@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquasense - Contact Us</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h2 class="topic">AQUASENSE</h2>
+    </header>
+
+    <nav class="menu">
+        <div class="user">
+            <img class="user-profile" src="./images/profile.png" alt="User Profile">
+            <div class="user-details">
+                <b class="user-name">USERNAME</b>
+                <p class="user-phoneNumber">XXXXX XXXXX</p>
+            </div>
+        </div>
+        <ul style="list-style-type: none;">
+            <li><a href="./index.html" class="menu-dashboard">Dashboard</a></li>
+            <li><a href="./tips.html" class="menu-element1">Tips</a></li>
+            <li><a href="./alerts.html" class="menu-element2">Alerts</a></li>
+            <li><a href="./settings.html" class="menu-element3">Settings</a></li>
+            <li><a href="./contact.html" class="menu-element4">Contact us</a></li>
+            <li><a href="./logout.html" class="menu-logout">Log out</a></li>
+        </ul>
+    </nav>
+
+    <main class="dashboard">
+        <section class="contact">
+            <h2 class="contact-title">Contact Us</h2>
+            <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                
+                <input type="hidden" name="access_key" value="0b1e87dd-115b-4334-96ee-aafbd391513e">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+
+                <button type="submit" class="contact-submit">Send Message</button>
+            </form>
+            <div id="form-response" class="form-response"></div>
+        </section>
+    </main>
+</body>
+</html>

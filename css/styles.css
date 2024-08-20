@@ -1,0 +1,594 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    width: 100%;
+    background-color: white;
+}
+
+.topic {
+    transform: translateY(30px);
+    padding-left: 3%;
+    color: black;
+    font-size: 20px;
+}
+
+.menu {
+    width: 17%;
+    height: 690px;
+    background-color: blue;
+    position: absolute;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    border-radius: 30px;
+}
+
+.user, .user-profile, .user-details, .menu-dashboard, .menu-element1, .menu-element2, .menu-element3, .menu-element4, .menu-logout {
+    position: absolute;
+    display: inline-block;
+    align-items: left;
+    justify-content: left;
+    color: white;
+}
+
+.user {
+    vertical-align: top;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(250, 250, 250, 0.6);
+    border-radius: 50px;
+    height: 10%;
+    width: 87%;
+    margin: 20px;
+    margin-top: 25px;
+}
+
+.user-profile {
+    width: 20%;
+    border-radius: 50px;
+    margin-top: 12px;
+    margin-left: 10px;
+}
+
+.user-details {
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+    margin-left: 65px;
+}
+
+.menu-dashboard, .menu-element1, .menu-element2, .menu-element3, .menu-element4, .menu-logout {
+    font-size: 25px;
+    margin-left: 15%;
+    margin-bottom: 20px;
+}
+
+.menu-dashboard {
+    font-size: 28px;
+    margin-top: 50%;
+}
+
+.menu-element1 {
+    margin-top: 74%;
+}
+
+.menu-element2 {
+    margin-top: 95%;
+}
+
+.menu-element3 {
+    margin-top: 195%;
+}
+
+.menu-element4 {
+    margin-top: 218%;
+}
+
+.menu-logout {
+    font-size: 28px;
+    margin-top: 240%;
+    align-items: bottom;
+    justify-content: bottom;
+}
+
+.water-level {
+    width: 23%;
+    height: 200px;
+    background-color: rgba(0, 0, 250, 0.8);
+    border-radius: 30px;
+    position: absolute;
+    margin-left: 20%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.water-level-text, .water-level-number, .water-level-used, .weather-text, .weather-number, .weather-used {
+    text-align: left;
+    color: white;
+}
+
+.water-level-text, .weather-text {
+    padding-top: 25px;
+    padding-left: 15px;
+    font-size: 30px;
+}
+
+.water-level-number, .weather-number {
+    padding-left: 12px;
+    font-size: 120px;
+}
+
+.water-level-used, .weather-used {
+    font-size: 30px;
+}
+
+.leakage {
+    width: 34%;
+    height: 200px;
+    background-color: rgba(0, 0, 250, 0.8);
+    border-radius: 30px;
+    position: absolute;
+    margin-left: 44%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.leakage-text {
+    color: white;
+    font-size: 48px;
+    padding-top: 50px;
+    padding-left: 18px;
+}
+
+.leakage-description {
+    color: white;
+    font-size: 18px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.leakage-button {
+    background-color: green;
+    color: white;
+    font-size: 25px;
+    margin-left: 80%;
+    padding: 15px;
+    border-radius: 50px;
+    border-color: white;
+    transform: translateY(-80px);
+}
+
+.weather {
+    width: 18%;
+    height: 200px;
+    background-color: rgba(0, 0, 250, 0.8);
+    border-radius: 30px;
+    position: absolute;
+    margin-left: 79%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.graph {
+    position: absolute;
+    margin-left: 22%;
+    margin-top: 17%;
+}
+
+.progress-bar {
+    width: 600px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 5px;
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 47%;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: blue;
+    border-radius: 5px 0 0 5px;
+    width: 0%;
+    animation: progress 0.8s ease-in-out forwards;
+}
+
+@keyframes progress {
+    0% {
+        width: 0;
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.progress-bar-label, .capacity-label {
+    position: absolute;
+    color: white;
+    transform: translate(-5%, -10%);
+    font-size: 14px;
+}
+
+.progress-bar-label {
+    top: 30%;
+    left: 45%;
+    color: white;
+}
+
+.capacity-label {
+    top: -38px;
+    left: 0%;
+    background-color: blue;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    z-index: 1;
+}
+
+.capacity-label:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid blue;
+}
+
+#toastBox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.toast {
+    width: 400px;
+    height: 80px;
+    background: #fff;
+    margin: 15px 0;
+    padding: 0%;
+    display: flex;
+    align-items: center;
+    font-size: large;
+    border-radius: 15px;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+    animation: alert 0.4s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+.toast span {
+    margin: 0 20px;
+    font-size: 35px;
+    color: #ff7782;
+}
+
+
+.weather-icon {
+    width: 120px;
+    margin-top: 20px;
+}
+
+.weather-temp, .weather-city {
+    color: white;
+}
+
+.weather-temp {
+    font-size: 60px;
+    transform: translateY(-100px);
+    margin-left: 42%;
+}
+
+.weather-city {
+    transform: translateY(-70px);
+    margin-left: 30%;
+}
+
+.error {
+    text-align: left;
+    margin-left: 30px;
+    font-size: 14px;
+    margin-top: 10px;
+    color: white;
+    display: none;
+}
+
+/* tips.css */
+.tips-page {
+    margin-left: 17%;
+    margin-top: 2%;
+    padding: 20px;
+}
+
+.tips-content {
+    background-color: rgba(0, 0, 250, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.tips-content h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.tips-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tips-list li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.tips-list li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+}
+
+
+.alerts {
+    width: 65%;
+    margin-left: 20%;
+    margin-top: 20px;
+}
+
+.alerts-title {
+    font-size: 36px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.alerts-list {
+    list-style-type: none;
+}
+
+.alert-item {
+    background-color: rgba(0, 0, 250, 0.8);
+    color: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.alert-heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.alert-description {
+    font-size: 18px;
+}
+
+.alert-action {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.contact {
+    width: 60%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: blue;
+    border-radius: 20px;
+    margin-left: 25%;
+    margin-top: 8%;
+}
+
+.contact-title {
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-size: 18px;
+    color: white;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-submit {
+    padding: 15px;
+    background-color: white;
+    color: blue;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    align-self: center;
+}
+
+.contact-submit:hover {
+    background-color: grey;
+}
+
+.form-response {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.response-success {
+    color: green;
+    font-size: 18px;
+}
+
+.response-error {
+    color: red;
+    font-size: 18px;
+}
+/* General Settings Page Styling */
+.settings {
+    padding: 20px;
+    margin-left: 20%;
+    margin-top: 50px;
+    font-family: Arial, sans-serif;
+}
+
+.settings-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: rgba(0, 0, 250, 0.8);
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    transform: translateY(-70px);
+}
+
+.settings-section:hover {
+    background-color: rgba(0, 0, 220, 0.9);
+}
+
+.settings-section h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.settings-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.settings-section input[type="text"],
+.settings-section input[type="email"],
+.settings-section input[type="tel"],
+.settings-section input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.settings-section button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.settings-section button:hover {
+    background-color: #218838;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .settings {
+        margin-left: 10%;
+        padding: 15px;
+    }
+    .settings-section {
+        padding: 15px;
+    }
+    .settings-section h2 {
+        font-size: 20px;
+    }
+    .settings-section input,
+    .settings-section button {
+        font-size: 14px;
+    }
+}
+.logout-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin-left: 18%;
+}
+
+.logout-box {
+    background-color: rgba(0, 0, 250, 0.8);
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    width: 80%;
+    transform: translateY(-160px);
+}
+
+.logout-text {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.logout-confirm-button, .logout-cancel-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 10px;
+    color: white;
+}
+
+.logout-confirm-button {
+    background-color: green;
+}
+
+.logout-cancel-button {
+    background-color: red;
+}
+
+.footer-text {
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    margin-top: 20px;
+    transform: translateY(30px);
+}

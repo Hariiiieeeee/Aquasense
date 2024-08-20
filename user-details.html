@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgba(0, 0, 250, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 250, 0.2);
+            width: 100%;
+            max-width: 360px;
+            box-sizing: border-box;
+        }
+        h2 {
+            text-align: center;
+            color: rgba(0, 0, 250, 0.8);
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: black;
+        }
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 250, 0.3);
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: rgba(0, 0, 250, 0.8);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: rgba(0, 0, 250, 1);
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>User Details</h2>
+        <form id="userDetailsForm">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+            
+            <label for="adults">Number of Adults:</label>
+            <input type="number" id="adults" name="adults" min="0" required>
+            
+            <label for="children">Number of Children:</label>
+            <input type="number" id="children" name="children" min="0" required>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById('userDetailsForm');
+            
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                // Get form values
+                const city = document.getElementById('city').value;
+                const adults = document.getElementById('adults').value;
+                const children = document.getElementById('children').value;
+
+                // Validate the form values if needed
+                if (city && adults >= 0 && children >= 0) {
+                    // Save data to localStorage (or use any other storage method as needed)
+                    localStorage.setItem('userCity', city);
+                    localStorage.setItem('numberOfAdults', adults);
+                    localStorage.setItem('numberOfChildren', children);
+
+                    // Redirect to index.html
+                    window.location.href = './index.html';
+                } else {
+                    alert("Please provide valid inputs.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

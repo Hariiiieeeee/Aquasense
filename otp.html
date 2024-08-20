@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquasense</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgba(0, 0, 250, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 250, 0.2);
+            width: 100%;
+            max-width: 360px;
+            box-sizing: border-box;
+        }
+        h2 {
+            text-align: center;
+            color: rgba(0, 0, 250, 0.8);
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="tel"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 0, 250, 0.3);
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: rgba(0, 0, 250, 0.8);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: rgba(0, 0, 250, 1);
+        }
+        button:disabled {
+            background-color: rgba(0, 0, 250, 0.5);
+            cursor: not-allowed;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>OTP Verification</h2>
+        <input type="text" id="username" placeholder="Enter your username" required>
+        <input type="tel" id="mobilenum" placeholder="Enter mobile number" required>
+        <button id="send-otp" onclick="sendOTP()">Send OTP</button>
+        <input type="text" id="optvalue" placeholder="Enter OTP" required>
+        <button id="verify-otp" onclick="verifyOTP()">Verify OTP</button>
+        <div id="error" class="error"></div>
+        <div id="errorotp" class="error"></div>
+    </div>
+
+    <script>
+        function sendOTP() {
+            const mobile = document.getElementById('mobilenum').value;
+            const username = document.getElementById('username').value;
+            fetch('http://localhost:3000/send-otp', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ mobile, username })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('error').textContent = 'OTP sent successfully';
+                } else {
+                    document.getElementById('error').textContent = `OTP not sent. Try again. Error: ${data.error}`;
+                    console.error('Error:', data.error);
+                }
+            })
+            .catch(error => {
+                document.getElementById('error').textContent = 'Error sending OTP.';
+                console.error('Error:', error);
+            });
+        }
+
+        function verifyOTP() {
+            const otp = document.getElementById('optvalue').value;
+            const mobile = document.getElementById('mobilenum').value;
+            const username = document.getElementById('username').value;
+            fetch('http://localhost:3000/verify-otp', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ otp, mobile, username })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    window.location.replace("./user-details.html");
+                } else {
+                    document.getElementById('errorotp').textContent = 'Invalid OTP. Please try again.';
+                    console.error('Error:', data.error);
+                }
+            })
+            .catch(error => {
+                document.getElementById('errorotp').textContent = 'Error verifying OTP.';
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
